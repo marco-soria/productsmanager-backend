@@ -12,7 +12,7 @@ export async function connectDB() {
     try {
         await db.authenticate();
         db.sync();
-        //console.log(colors.blue('Connection has been established successfully.'));
+        console.log(colors.blue('Connection has been established successfully.'));
     } catch (error) {
         console.log(error)
         console.error(colors.red('Unable to connect to the database'));

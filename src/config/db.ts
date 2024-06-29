@@ -4,13 +4,15 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-const db = new Sequelize(process.env.POSTGRESQL_DB!, process.env.POSTGRESQL_USER!, process.env.POSTGRESQL_PASSWORD!, {
-    host: process.env.POSTGRESQL_HOST,
-    port: parseInt(process.env.POSTGRESQL_PORT!),
-    dialect: 'postgres',
-    logging: false,
-  }, 
-);
+// const db = new Sequelize(process.env.POSTGRESQL_DB!, process.env.POSTGRESQL_USER!, process.env.POSTGRESQL_PASSWORD!, {
+//     host: process.env.POSTGRESQL_HOST,
+//     port: parseInt(process.env.POSTGRESQL_PORT!),
+//     dialect: 'postgres',
+//     logging: false,
+//   }, 
+// );
+
+const db = new Sequelize(process.env.DB_URI)
 
 db.addModels([__dirname + '/../models/**/*']);
 
